@@ -12,16 +12,16 @@ RUN apt-get update \
     && apt-get install -y \
     && docker-php-ext-install mysqli pdo pdo_mysql
 
-RUN apt-get update \
-    && apt-get install -y \
-        libicu-dev \
-    && rm -rf /var/lib/apt/lists/* \
-    && docker-php-ext-install intl \
-    && apt-get remove -y \
-        libicu-dev \
-    && apt-get install -y \
-        libicu52 \
-    && apt-get autoremove -y
+# RUN apt-get update \
+#     && apt-get install -y \
+#         libicu-dev \
+#     && rm -rf /var/lib/apt/lists/* \
+#     && docker-php-ext-install intl \
+#     && apt-get remove -y \
+#         libicu-dev \
+#     && apt-get install -y \
+#         libicu52 \
+#     && apt-get autoremove -y
     
 RUN apt-get update \
     && apt-get install libcurl4-openssl-dev -y \
