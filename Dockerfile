@@ -5,13 +5,6 @@ RUN echo "date.timezone=Europe/London" > /usr/local/etc/php/conf.d/zz-custom.ini
     && echo "error_reporting = E_ALL" >> /usr/local/etc/php/conf.d/zz-custom.ini \
     && echo "display_errors = on" >> /usr/local/etc/php/conf.d/zz-custom.ini \
     && echo "session.autostart=0" >> /usr/local/etc/php/conf.d/zz-custom.ini
-    
-RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
-	&& locale-gen en_US.utf8 \
-	&& /usr/sbin/update-locale LANG=en_US.UTF-8
-
-ENV LC_ALL en_US.UTF-8
-ENV LANG en_US.UTF-8
 
 ENV PATH "$PATH:/var/www/html/vendor/bin"
 
