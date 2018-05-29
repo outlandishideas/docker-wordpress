@@ -76,6 +76,10 @@ RUN curl -OL http://www.phpdoc.org/phpDocumentor.phar && \
     chmod +x phpDocumentor.phar && \
     mv phpDocumentor.phar /usr/local/bin/phpdoc
 
+RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && \
+    chmod +x wp-cli.phar && \
+    mv wp-cli.phar /usr/local/bin/wp
+
 RUN apt-get update \
     && pecl install xdebug \
     && docker-php-ext-enable xdebug \
