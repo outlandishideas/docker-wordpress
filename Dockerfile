@@ -10,3 +10,9 @@ RUN apk update \
     && docker-php-ext-install gd mysqli pdo pdo_mysql \
     && echo "date.timezone=Europe/London" > /usr/local/etc/php/conf.d/zz-custom.ini \
     && echo "session.autostart=0" >> /usr/local/etc/php/conf.d/zz-custom.ini
+
+RUN apk update && apk add --virtual --no-cache \
+    imagemagick imagemagick-dev $PHPIZE_DEPS \
+    && pecl install imagick \
+    && docker-php-ext-enable imagick \
+    && apk del imagemagick-dev $PHPIZE_DEPS
