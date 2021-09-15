@@ -33,7 +33,7 @@ jobs:
         with:
           push: true
           file: ./php7.2/Dockerfile
-          tags: outlandish/wordpress:php7.2
+          tags: outlandish/wordpress:7.2
       -
         name: Build and push php7.3
         id: docker_build_php7_3
@@ -41,7 +41,7 @@ jobs:
         with:
           push: true
           file: ./php7.3/Dockerfile
-          tags: outlandish/wordpress:php7.3
+          tags: outlandish/wordpress:7.3
       -
         name: Build and push php7.4
         id: docker_build_php7_4
@@ -49,4 +49,4 @@ jobs:
         with:
           push: true
           file: ./php7.4/Dockerfile
-          tags: outlandish/wordpress:php7.4
+          tags: outlandish/wordpress:7.4
