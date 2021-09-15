@@ -1,4 +1,4 @@
-name: Build and push to Docker Hub as outlandish/wordpress-dev:latest
+name: Build and push to Docker Hub as outlandish/wordpress:latest
 
 on:
   push:
