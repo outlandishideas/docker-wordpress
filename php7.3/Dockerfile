@@ -1,4 +1,6 @@
-FROM php:7.3-fpm-alpine
+# Alpine 3.14+ currently breaks some builds with Docker < 20.10.6, so we shouldn't upgrade until
+# our GitLab runners are on such a version.
+FROM php:7.3-fpm-alpine3.13
 
 ENV PATH "$PATH:/var/www/html/vendor/bin"
 
