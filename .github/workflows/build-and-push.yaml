@@ -50,3 +50,11 @@ jobs:
           push: true
           file: ./php7.4/Dockerfile
           tags: outlandish/wordpress:7.4
+      -
+        name: Build and push php8.1
+        id: docker_build_php8_1
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          file: ./php8.1/Dockerfile
+          tags: outlandish/wordpress:8.1
