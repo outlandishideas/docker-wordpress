@@ -1,6 +1,5 @@
-# Alpine 3.14+ currently breaks some builds with Docker < 20.10.6, so we shouldn't upgrade until
-# our GitLab runners are on such a version.
-FROM php:7.2-fpm-alpine3.12
+# Alpine 3.15 upgrades Node to 16. Some downstream bits that use `apk` to add Node are not ready for this yet.
+FROM php:7.4-fpm-alpine3.14
 
 ENV PATH "$PATH:/var/www/html/vendor/bin"
 
