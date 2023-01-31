@@ -22,14 +22,14 @@ jobs:
       -
         name: "Build and push 'latest' (7.2 / default tag)"
         id: docker_build_latest
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           push: true
           tags: outlandish/wordpress:latest
       -
         name: Build and push php7.2
         id: docker_build_php7_2
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           push: true
           file: ./php7.2/Dockerfile
@@ -37,7 +37,7 @@ jobs:
       -
         name: Build and push php7.3
         id: docker_build_php7_3
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           push: true
           file: ./php7.3/Dockerfile
@@ -45,7 +45,7 @@ jobs:
       -
         name: Build and push php7.4
         id: docker_build_php7_4
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           push: true
           file: ./php7.4/Dockerfile
@@ -53,7 +53,7 @@ jobs:
       -
         name: Build and push php8.0
         id: docker_build_php8_0
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           push: true
           file: ./php8.0/Dockerfile
@@ -61,7 +61,7 @@ jobs:
       -
         name: Build and push php8.1
         id: docker_build_php8_1
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           push: true
           file: ./php8.1/Dockerfile
