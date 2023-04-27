@@ -11,10 +11,9 @@ RUN apk update \
     && apk add --no-cache $PHP_GD_DEPS icu-dev \
     && docker-php-ext-configure intl \
     && docker-php-ext-install gd mysqli pdo pdo_mysql intl \
-    && echo "date.timezone=Europe/London" > /usr/local/etc/php/conf.d/zz-custom.ini \
-    && echo "session.autostart=0" >> /usr/local/etc/php/conf.d/zz-custom.ini \
-    && echo "post_max_size=16M" >> /usr/local/etc/php/conf.d/zz-custom.ini \
-    && echo "upload_max_filesize=16M" >> /usr/local/etc/php/conf.d/zz-custom.ini
+    && docker-php-ext-enable opcache
+
+COPY ../php-custom.ini /usr/local/etc/php/
 
 RUN apk update && apk add --virtual --no-cache \
     imagemagick imagemagick-dev $PHPIZE_DEPS \
