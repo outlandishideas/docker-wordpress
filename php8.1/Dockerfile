@@ -1,6 +1,4 @@
-FROM php:8.1-fpm-alpine3.14
-# Alpine 3.15 upgrades Node to 16. Some downstream bits that use `apk` to add Node are not ready for this yet.
-# AND Alpine 3.14 still seems to have runtime permission issues with our GitLab runners?
+FROM php:8.1-fpm-alpine3.15
 
 ENV PATH "$PATH:/var/www/html/vendor/bin"
 
